@@ -1,0 +1,22 @@
+
+
+<div class="appTableContainer container">
+    <ng-container *ngIf="tableData.length">
+    <table class="table table-bordered table-responsive">
+        <tr>
+            <th *ngFor="let key of keys">
+                {{key}}
+            </th>
+        </tr>
+        <tr *ngFor="let item of tableData | search : searchKey">
+            <td *ngFor="let key of keys">
+                {{item[key]}}
+            </td>
+        </tr>
+    </table>
+    </ng-container>
+    <ng-container *ngIf="!tableData.length">
+        <h2>No data for Table</h2>
+    </ng-container>
+    
+</div>
